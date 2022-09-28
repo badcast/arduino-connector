@@ -19,7 +19,7 @@ Step 1. Build
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release -B ./build 
 cd ./build
-cmake --build . -clean-first
+cmake --build . --clean-first
 ```
 
 Step 2. Run Daemon
