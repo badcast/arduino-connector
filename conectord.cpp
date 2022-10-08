@@ -50,6 +50,8 @@ int main() {
             std::cout << "Memory used: " << (con.data().memorySize - con.data().memoryFree) << std::endl;
             std::cout << "LCD Rows: " << con.data().lcdRows << ", Cols: " << con.data().lcdCols << std::endl;
 
+            std::string xx = con.port().fullname();
+            xx = con.port().name();
             awake(con);
 
         } else {

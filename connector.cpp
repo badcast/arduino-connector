@@ -86,7 +86,7 @@ bool device_awake(Connector& con, const command_request* requestCmd, command_res
     // send buffer
     if (buffer) {
         if (size == -1) size = strlen(buffer);
-        uint8_t *q = (uint8_t*)malloc(1);
+        uint8_t* q = (uint8_t*)malloc(1);
         alpha = read_timeout(con.handle(), q, 1);
         free(q);
         alpha = read_timeout(con.handle(), responceCmd, size_resp);
@@ -211,8 +211,10 @@ bool Connector::connect(Port port) {
     }
 
     if (!status) {
-        if (_fd != -1) close(_fd);
-        _fd = ~0;
+        if (_fd != -1)
+            close(_fd);
+        else
+            _fd = ~0;
     }
     return status;
 }
